@@ -1,0 +1,8 @@
+{
+  "name": "node-REST-starter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/DreamWorld420/node-REST-starter",
+  "author": "DreamWorld420<dreamworld420@protonmail.com>",
+  "license": "MIT"
+}
