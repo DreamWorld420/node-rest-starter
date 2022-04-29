@@ -1,8 +1,8 @@
 const morgan = require("morgan");
-const config = require("../config");
+const config = require("../config/");
 
 module.exports = async (app) => {
-	if (config.node_env === "development") {
+	if (config.isDev) {
 		app.use(morgan("dev"));
 	}
 };

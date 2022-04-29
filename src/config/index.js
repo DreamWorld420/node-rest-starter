@@ -5,4 +5,5 @@ module.exports = {
 	port_dev: process.env.PORT_DEV,
 	host_dev: process.env.HOST_DEV,
 	mongodb_uri_dev: process.env.MONGODB_URI_DEV,
+	isDev: process.env.NODE_ENV === "development",
 };
