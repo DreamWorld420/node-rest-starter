@@ -6,4 +6,5 @@ module.exports = {
 	host_dev: process.env.HOST_DEV,
 	mongodb_uri_dev: process.env.MONGODB_URI_DEV,
 	isDev: process.env.NODE_ENV === "development",
+	rootPath: "/api/v1/",
 };
