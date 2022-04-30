@@ -2,7 +2,7 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const config = require("../config/");
-const utils = require("../utils/");
+const routeMerger = require("../utils/routeMerger");
 const routes = require("../api/routes/");
 const GEH = require("../utils/GlobalErrorHandler");
 
@@ -16,7 +16,7 @@ module.exports = async (app) => {
 
 	// router mounting
 	routes.forEach((route) => {
-		app.use(utils.routerMerger(config.rootPath + route.path), route.router);
+		app.use(routeMerger(config.rootPath + route.path), route.router);
 	});
 
 	// global error handler
