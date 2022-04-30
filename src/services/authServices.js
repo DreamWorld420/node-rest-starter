@@ -27,4 +27,22 @@ module.exports = {
 
 		return Token.generate(user._id);
 	},
+
+	async protected(req) {
+		const token = req.cookies["token"];
+
+		if (!token) {
+			throw new APIError("please login", 400);
+		}
+
+		const { _id } = await Token.verify(token);
+
+		const user = await User.findById(_id);
+
+		if (!user) {
+			throw new APIError("bad token", 400);
+		}
+
+		req.user = user;
+	},
 };

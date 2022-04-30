@@ -29,4 +29,10 @@ module.exports = {
 				},
 			});
 	}),
+
+	protected: catchAsync(async (req, res, next) => {
+		services.protected(req).then(() => {
+			next();
+		});
+	}),
 };
