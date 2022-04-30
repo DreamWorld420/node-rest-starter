@@ -15,6 +15,7 @@ const userSchema = new mongoose.Schema({
 	password: {
 		type: String,
 		required: true,
+		select: false,
 	},
 	createdAt: {
 		type: Date,
@@ -34,5 +35,9 @@ userSchema.pre("save", function (next) {
 	}
 	next();
 });
+
+userSchema.methods.isValidPassword = async function (candidate, userPassword) {
+	return bcrypt.compare(candidate, userPassword);
+};
 
 module.exports = mongoose.model("User", userSchema);

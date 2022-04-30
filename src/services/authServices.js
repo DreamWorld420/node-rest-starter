@@ -9,4 +9,13 @@ module.exports = {
 		});
 		return user;
 	},
+
+	// async login(req) {
+	// 	const user = await User.findOne({ username: req.body.username }).select(
+	// 		"+password"
+	// 	);
+	// 	console.log(
+	// 		await user.isValidPassword(req.body.password, user.password)
+	// 	);
+	// },
 };
