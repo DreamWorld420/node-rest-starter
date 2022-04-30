@@ -1,10 +1,10 @@
 class APIError extends Error {
-	constructor(message, statusCode, isOperational) {
+	constructor(message, statusCode = 500, isOperational = false) {
 		super(message);
 
 		this.statusCode = statusCode;
 		this.isOperational = isOperational;
-		this.statue = statusCode.startsWith("4") ? "fail" : "error";
+		this.status = statusCode.toString().startsWith("4") ? "fail" : "error";
 
 		Error.captureStackTrace(this, this.constructor);
 	}

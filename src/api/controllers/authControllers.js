@@ -1,7 +1,8 @@
 const services = require("../../services/authServices");
+const { catchAsync } = require("../../utils/GlobalErrorHandler");
 
 module.exports = {
-	async signup(req, res, next) {
+	signup: catchAsync(async (req, res, next) => {
 		const user = await services.signup(req);
 		return res.status(200).json({
 			status: "success",
@@ -9,9 +10,9 @@ module.exports = {
 				user,
 			},
 		});
-	},
+	}),
 
-	async login(req, res, next) {
+	login: catchAsync(async (req, res, next) => {
 		const token = await services.login(req);
-	},
+	}),
 };
