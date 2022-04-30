@@ -1,4 +1,6 @@
 const User = require("../models/User");
+const APIError = require("../utils/APIError");
+const Token = require("../utils/Token");
 
 module.exports = {
 	async signup(req) {
@@ -10,12 +12,19 @@ module.exports = {
 		return user;
 	},
 
-	// async login(req) {
-	// 	const user = await User.findOne({ username: req.body.username }).select(
-	// 		"+password"
-	// 	);
-	// 	console.log(
-	// 		await user.isValidPassword(req.body.password, user.password)
-	// 	);
-	// },
+	async login(req) {
+		const { username, password } = req.body;
+
+		if (!(username && password)) {
+			throw new APIError("please provide username and password", 400);
+		}
+
+		const user = await User.findOne({ username }).select("+password");
+
+		if (!(user && (await user.isValidPassword(password, user.password)))) {
+			throw new APIError("Invalid username or password", 400);
+		}
+
+		return Token.generate(user._id);
+	},
 };

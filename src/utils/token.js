@@ -1,6 +1,6 @@
 const JWT = require("jsonwebtoken");
 const { promisify } = require("util");
-const config = require("../config/");
+const config = require("../config");
 
 module.exports = {
 	async generate(_id) {
