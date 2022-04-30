@@ -51,11 +51,12 @@ minimal description of important folder and files, just a personal opinion (⚠�
         └── index.js                        # process.env configs
     ├── loader                              # loaders
         ├── expressLoader.js                # router mounting, middle-wares, global error handling
-        ├── mongooseLoader.js               # database connection + database name
+        ├── mongooseLoader.js               # database connection
         └── index.js                        # main loader (expressLoader + mongooseLoader)
     ├── models                              # database schemas and models
     ├── services                            # service layer (business logic)
-    └── utils                               # APIError, GlobalErrorHandler, Token (JWT)
+    ├── utils                               # APIError, GlobalErrorHandler, Token (JWT)
+    └── index.js                            # main app entry point + database name
 ├── .gitignore                              # gitignore
 ├── LICENSE                                 # license
 ├── package.json                            # package
