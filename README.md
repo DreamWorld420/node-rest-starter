@@ -25,7 +25,7 @@ remove the `.git` folder:
 install dependencies:
 `yarn`
 
-create a `.env` file in your root folder, use the following predefined options (⚠️change as you wish⚠️):
+create a `.env` file in your root folder, use the following predefined options (⚠️**change with care**⚠️):
 
 ```
 NODE_ENV="development"
@@ -38,7 +38,7 @@ JWT_EXPIRES_IN="90d"
 
 ## folders and files description
 
-minimal description of important folder and files, just a personal opinion (⚠️change as you wish⚠️)
+minimal description of important folder and files, just a personal opinion (⚠️**change with care**⚠️):
 
 ```
 .
