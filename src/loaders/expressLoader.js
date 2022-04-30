@@ -1,5 +1,6 @@
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
 const config = require("../config/");
 const utils = require("../utils/");
 const routes = require("../api/routes/");
@@ -10,6 +11,7 @@ module.exports = async (app) => {
 	}
 
 	app.use(bodyParser.json());
+	app.use(cookieParser());
 
 	// router mounting
 	routes.forEach((route) => {
