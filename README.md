@@ -8,8 +8,8 @@ a simple node backend REST boilerplate via express and mongoose.
 -   JWT Authentication
 -   Auth routes and controllers (login, signup)
 -   Auth protected routes controller
--   auto router mounting
--   clean folder structure
+-   Auto router mounting
+-   Clean folder structure
 
 ## usage
 
