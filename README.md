@@ -51,7 +51,7 @@ minimal description of important folder and files, just a personal opinion (⚠�
         └── index.js                        # process.env configs
     ├── loader                              # loaders
         ├── expressLoader.js                # router mounting, middle-wares, global error handling
-        ├── mongooseLoader.js               # database connection + **database name**
+        ├── mongooseLoader.js               # database connection + database name
         └── index.js                        # main loader (expressLoader + mongooseLoader)
     ├── models                              # database schemas and models
     ├── services                            # service layer (business logic)
