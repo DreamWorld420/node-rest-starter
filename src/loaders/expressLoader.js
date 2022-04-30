@@ -4,6 +4,7 @@ const cookieParser = require("cookie-parser");
 const config = require("../config/");
 const utils = require("../utils/");
 const routes = require("../api/routes/");
+const GEH = require("../utils/GlobalErrorHandler");
 
 module.exports = async (app) => {
 	if (config.isDev) {
@@ -17,4 +18,7 @@ module.exports = async (app) => {
 	routes.forEach((route) => {
 		app.use(utils.routerMerger(config.rootPath + route.path), route.router);
 	});
+
+	// global error handler
+	app.use(GEH.global());
 };
