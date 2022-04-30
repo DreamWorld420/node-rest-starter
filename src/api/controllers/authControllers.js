@@ -10,4 +10,8 @@ module.exports = {
 			},
 		});
 	},
+
+	async login(req, res, next) {
+		const token = await services.login(req);
+	},
 };
