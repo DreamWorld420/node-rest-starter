@@ -44,7 +44,7 @@ minimal description of important folder and files, just a personal opinion (⚠�
 .
 ├── src                                     # source folder
     ├── api                                 # controllers and routes
-        ├── controllers                     # controllers
+        ├── controllers                     # controllers (controller layer)
         └── routes                          # routes
             └── index.js                    # any router in here will get auto mounted
     ├── config                              # config
@@ -53,14 +53,9 @@ minimal description of important folder and files, just a personal opinion (⚠�
         ├── expressLoader.js                # router mounting, middle-wares, global error handling
         ├── mongooseLoader.js               # database connection
         └── index.js                        # main loader (expressLoader + mongooseLoader)
-    ├── models                              # database schemas and models
-    ├── services                            # service layer (business logic)
-    ├── utils                               # APIError, GlobalErrorHandler, Token (JWT)
-    └── index.js                            # main entry point + database name
-├── .gitignore                              # gitignore
-├── LICENSE                                 # license
-├── package.json                            # package
-├── README.md                               # readme
-└── yarn.lock                               # package lock
+    ├── models                              # mongoose models (data layer)
+    ├── services                            # business logics (service layer)
+    ├── utils                               # utility classes and functions
+    └── index.js                            # app entry point + database name
 
 ```
